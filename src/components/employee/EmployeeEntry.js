@@ -11,21 +11,22 @@ const [agevalue,Setage]=useState('');
 const [salaryvalue,Setsalary]=useState('');
 
 const [arr,SetArr]=useState(emp);
+
   return (
     <>
     <div className='container'>
  
   <div className="form-group">
     <label htmlFor="exampleInputEmail1">Employee Name</label>
-    <input type="text" className="form-control"  onKeyUp={(e)=>{Setname(e.target.value)}} id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name"/>   
+    <input type="text" className="form-control"  onChange={(e)=>{Setname(e.target.value)}} id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name"/>   
   </div>
   <div className="form-group">
     <label htmlFor="exampleInputPassword1">Age</label>
-    <input type="text" className="form-control" onKeyUp={(e)=>{Setage(e.target.value)}} id="exampleInputPassword1" placeholder="text"/>
+    <input type="text" className="form-control" onChange={(e)=>{Setage(e.target.value)}} id="exampleInputPassword1" placeholder="text"/>
   </div>
   <div className="form-group">
     <label htmlFor="exampleInputPassword1">Salary</label>
-    <input type="text" className="form-control" onKeyUp={(e)=>{Setsalary(e.target.value)}} id="exampleInputPassword1" placeholder="text"/>
+    <input type="text" className="form-control" onChange={(e)=>{Setsalary(e.target.value)}} id="exampleInputPassword1" placeholder="text"/>
   </div>
   
   <button type="submit" className="btn btn-primary m-1" onClick={()=>{ 
@@ -39,7 +40,7 @@ const [arr,SetArr]=useState(emp);
 <table className='table table-bordered table-striped'>
         
         <thead>
-            <tr>             
+            <tr>       
             <td>Name</td>
             <td>Age</td>
             <td>Salary</td>
@@ -53,7 +54,8 @@ const [arr,SetArr]=useState(emp);
               <button onClick={() => {
               SetArr(
                 arr.filter(a =>
-                  a.id !== emp.id
+                  a.id !== emp.id,
+                  
                 )
               );
             }}>
@@ -64,6 +66,7 @@ const [arr,SetArr]=useState(emp);
        
         </tbody>
     </table>
+   
     <EmployeeView arr={arr}></EmployeeView>
 
 

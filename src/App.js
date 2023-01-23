@@ -13,6 +13,7 @@ import PropsDemo1 from './components/props/PropsDemo1';
 import Stateaddition from './components/stateexample/Stateaddition';
 import EmployeeEntry from './components/employee/EmployeeEntry';
 import List from './components/list/List';
+import EmpMain from './components/emp/EmpMain';
 
 function App() {
   return (
@@ -29,7 +30,8 @@ function App() {
 {/* <RegistrationForm></RegistrationForm> */}
 {/* <Stateaddition></Stateaddition> */}
 {/* <EmployeeMain/> */}
-<EmployeeEntry/>
+{/* <EmployeeEntry/> */}
+<EmpMain/>
 {/* <List/> */}
     </>
   );

@@ -23,7 +23,7 @@ export default function EmployeeView(props) {
                   <td>
                     <button
                       onClick={() => {
-                        props.arr.filter((a) => a.name !== emp.name);
+                        props.arr.filter(a => a.name !== emp.name);
                       }}
                     >
                       Delete
