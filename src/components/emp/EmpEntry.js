@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 
+
+
 let count=0;
 
 export default function EmpEntry(props) {
@@ -20,6 +22,9 @@ export default function EmpEntry(props) {
         }
     }
 
+   
+
+
 
   return (
     <>
@@ -36,15 +41,12 @@ export default function EmpEntry(props) {
   </div>
   <div class="col-sm-2">
   <button className='btn btn-success' style={{textAlign:"left"}} onClick={()=>{
-        let emp={id:count+1,name:name,age:age,sal:sal};
+        let emp={id:'5',name:name,age:age,sal:sal};
         props.addEmp(emp);
     }}>Save</button>
     </div>
 </div>
 
-
-
-    
     </>
   )
 }

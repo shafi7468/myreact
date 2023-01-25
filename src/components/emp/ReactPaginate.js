@@ -1,11 +1,10 @@
-import React from 'react'
-import { useState } from 'react';
-import swal from 'sweetalert'
-import Pagination  from "https://cdn.skypack.dev/rc-pagination@3.1.15";
-import './Emp.css'
+import React, { useState } from 'react'
+import swal from 'sweetalert';
+import ReactPagination from 'react-paginate';
+import './ReactPaginate.css'
+import SearchBar from 'react-js-search'
 
-
-export default function EmpView(props) {
+export default function ReactPaginate(props) {
     const[name,setName]=useState('');
     const[age,setAge]=useState('');
     const[sal,setSal]=useState('');
@@ -24,47 +23,50 @@ export default function EmpView(props) {
         }
     }
 
-    const [perPage, setPerPage] = useState(4);
-    const [size, setSize] = useState(perPage);
-    const [current, setCurrent] = useState(1);
-
-    const PerPageChange = (value) => {
-        setSize(value);
-        const newPerPage = Math.ceil(props.empData.length / value);
-        if (current > newPerPage) {
-            setCurrent(newPerPage);
-        }
-    }
-
-    const getData = (current, pageSize) => {
-        // Normally you should get the data from the server
-        return props.empData.slice((current - 1) * pageSize, current * pageSize);
-    };
-
-    const PaginationChange = (page, pageSize) => {
-        setCurrent(page);
-        setSize(pageSize)
-    }
-
-    const PrevNextArrow = (current, type, originalElement) => {
-        if (type === 'prev') {
-            return <button><i className="fa fa-angle-double-left"></i></button>;
-        }
-        if (type === 'next') {
-            return <button><i className="fa fa-angle-double-right"></i></button>;
-        }
-        return originalElement;
-    }
-
-
-    const setData=(name,age,sal)=>{
+      const setData=(name,age,sal)=>{
         setName(name);
         setAge(age);
         setSal(sal);
     }
 
+    
+//search start
+const [emp, setEmp] = useState(props.empData);
+const [searchEmp, setSearchEmp] = useState(emp);
+
+
+//search end
+
+   //pagination start
+    const [itemOffset, setItemOffset] = useState(0);
+    const endOffset = itemOffset + props.itemsPerPage;        
+
+    const currentItems = props.empData.slice(itemOffset, endOffset);    
+    
+    const pageCount = Math.ceil(props.empData.length / props.itemsPerPage); 
+        
+    const handlePageClick = (event) => {
+      const newOffset = (event.selected * props.itemsPerPage) % props.empData.length;    
+      setItemOffset(newOffset);
+    };
+
+ //pagination End
+
+
   return (
     <>
+     <hr />
+     <div class="col-6 row m-5" style={{textAlign:"right",justifyContent:"right"}}>
+    <SearchBar
+        onSearchTextChange={(term, currentItems) => {
+            setSearchEmp([...currentItems]);
+        }}
+        
+        placeHolderText={"Search here..."}
+        data={props.empData}
+      />
+     
+</div>
     <div class="col-6 row m-5">
       <table className="table table-bordered table-striped col-6">
         <thead>
@@ -75,9 +77,10 @@ export default function EmpView(props) {
           </tr>
         </thead>
 
+        
         <tbody>
-          
-       {getData(current, size).map((emp, index) => {
+        {currentItems && currentItems.map((emp, index) => {
+            
             return (
               <>
                 <tr key={index}>
@@ -123,19 +126,32 @@ export default function EmpView(props) {
       </table>
       </div>
       <div className='col-6 row m-5'>
-                                
-                                <Pagination
-                                    className="pagination-data"
-                                    showTotal={(total, range) => `Showing ${range[0]}-${range[1]} of ${total}`}
-                                    onChange={PaginationChange}
-                                    total={props.empData.length}
-                                    current={current}
-                                    pageSize={size}
-                                    showSizeChanger={false}
-                                    itemRender={PrevNextArrow}
-                                    onShowSizeChange={PerPageChange}
-                                />
-                            </div>
+      
+      <ReactPagination
+       
+        breakLabel={'...'}
+        containerClassName={'pagination'}
+        disabledClassName={'disabled-page'}
+        marginPagesDisplayed={0}          
+        onPageChange={handlePageClick}      
+        pageRangeDisplayed={5}           
+        renderOnZeroPageCount={null}    
+        nextLabel="next >"
+        previousLabel="< previous"
+
+        breakClassName={'page-item'}
+        breakLinkClassName={'page-link'}        
+        pageClassName={'page-item'}
+        pageLinkClassName={'page-link'}
+        previousClassName={'page-item'}
+        previousLinkClassName={'page-link'}
+        nextClassName={'page-item'}
+        nextLinkClassName={'page-link'}
+        activeClassName={'active'}
+        pageCount={pageCount}
+
+      />
+</div>
       
 <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div className="modal-dialog">

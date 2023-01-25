@@ -3,9 +3,12 @@ import EmpEntry from "./EmpEntry";
 import employee from "./Emp.json";
 import { useState } from "react";
 import EmpView from "./EmpView";
+import ReactPaginate from "./ReactPaginate";
+import SearchEmp from "./SerachEmp";
 
 export default function EmpMain() {
   const [empData, setEmployee] = useState(employee);
+
 
   const addEmp = (obj) => {
     let tempArray = [...empData, obj];
@@ -26,14 +29,23 @@ export default function EmpMain() {
  
   )
   
+
   setEmployee(tempData);
 }
+
+const searchEmp=(obj)=>{
+  let tempArray = [...obj];
+       setEmployee(tempArray);
+}
+
   
 
   return (
     <>
       <EmpEntry addEmp={addEmp}></EmpEntry>
-      <EmpView empData={empData} deleteData={deleteData} updateData={updateData}/>
+      {/* <SearchEmp empData={empData} /> */}
+      {/* <EmpView empData={empData} deleteData={deleteData} updateData={updateData}/> */}
+      <ReactPaginate empData={empData} deleteData={deleteData} updateData={updateData} searchEmp={searchEmp} itemsPerPage={4}/>
     </>
   );
 }

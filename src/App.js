@@ -14,6 +14,7 @@ import Stateaddition from './components/stateexample/Stateaddition';
 import EmployeeEntry from './components/employee/EmployeeEntry';
 import List from './components/list/List';
 import EmpMain from './components/emp/EmpMain';
+import ReactPaginate from './components/emp/ReactPaginate';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
 {/* <EmployeeMain/> */}
 {/* <EmployeeEntry/> */}
 <EmpMain/>
+{/* <ReactPaginate/> */}
 {/* <List/> */}
     </>
   );
