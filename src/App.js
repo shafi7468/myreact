@@ -8,13 +8,19 @@ import ProductList from './components/products/ProductList';
 import StateDemo1 from './components/state/StateDemo1';
 import ShowhideDemo2 from './components/state/ShowhideDemo2';
 import MaxlengthTextbox from './components/state/MaxlengthTextbox';
-import RegistrationForm from './components/forms/RegistrationForm';
+
 import PropsDemo1 from './components/props/PropsDemo1';
 import Stateaddition from './components/stateexample/Stateaddition';
 import EmployeeEntry from './components/employee/EmployeeEntry';
 import List from './components/list/List';
 import EmpMain from './components/emp/EmpMain';
 import ReactPaginate from './components/emp/ReactPaginate';
+import HttpDemo1 from './components/HTTP/HttpDemo1';
+import RegForm from './components/form/RegForm';
+import DynamicForm from './components/form/DynamicForm';
+import FormDemo1 from './components/form/FormDemo1';
+import FormValidation from './components/form/FormValidation';
+
 
 function App() {
   return (
@@ -32,9 +38,16 @@ function App() {
 {/* <Stateaddition></Stateaddition> */}
 {/* <EmployeeMain/> */}
 {/* <EmployeeEntry/> */}
-<EmpMain/>
+{/* <EmpMain/> */}
 {/* <ReactPaginate/> */}
 {/* <List/> */}
+{/* <HttpDemo1/> */}
+
+{/* <RegForm/> */}
+<DynamicForm/>
+{/* <FormDemo1/> */}
+{/* <FormValidation/> */}
+
     </>
   );
 }
