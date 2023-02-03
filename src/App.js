@@ -20,9 +20,15 @@ import RegForm from './components/form/RegForm';
 import DynamicForm from './components/form/DynamicForm';
 import FormDemo1 from './components/form/FormDemo1';
 import FormValidation from './components/form/FormValidation';
+import AxiosDemo1 from './components/HTTP/AxiosDemo1';
+import AxiosDemo2 from './components/HTTP/AxiosDemo2';
+import Myinterceptor1 from './components/interceptors/Interceptor1';
+import Myinterceptor2 from './components/interceptors/Myinterceptor2';
 
 
 function App() {
+  Myinterceptor1();
+  Myinterceptor2();
   return (
     <>
     {/* <Header></Header>    */}
@@ -44,9 +50,12 @@ function App() {
 {/* <HttpDemo1/> */}
 
 {/* <RegForm/> */}
-<DynamicForm/>
+{/* <DynamicForm/> */}
 {/* <FormDemo1/> */}
 {/* <FormValidation/> */}
+{/* <AxiosDemo1/> */}
+
+<AxiosDemo2/>
 
     </>
   );
