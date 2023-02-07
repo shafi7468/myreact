@@ -7,7 +7,7 @@ export default function Header() {
   
   return (
     <div className="header" style={{padding:"1px"}}>
-    <Mainhead></Mainhead>
+    {/* <Mainhead></Mainhead> */}
     
     </div>
   );

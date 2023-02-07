@@ -54,14 +54,7 @@ export default function Mainhead() {
 
      
         
-        <div
-          className="d-inline-block col-1"
-          style={{ textAlign: "center", margin: "20px" }}
-        >
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal">
-  products
-</button>
-</div>
+       
 <div d-inline-block col style={{ color: "navajowhite" }}>
           Contact Us
           <br />

@@ -41,7 +41,7 @@ export default function EmpEntry(props) {
   </div>
   <div class="col-sm-2">
   <button className='btn btn-success' style={{textAlign:"left"}} onClick={()=>{
-        let emp={id:'5',name:name,age:age,sal:sal};
+        let emp={name:name,age:age,salary:sal};
         props.addEmp(emp);
     }}>Save</button>
     </div>

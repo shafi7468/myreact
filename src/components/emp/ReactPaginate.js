@@ -9,6 +9,7 @@ export default function ReactPaginate(props) {
     const[age,setAge]=useState('');
     const[sal,setSal]=useState('');
 
+
     const[flag,setFlag]=useState(true);
 
     const changeEventHandler=(e)=>{
@@ -86,7 +87,7 @@ const [searchEmp, setSearchEmp] = useState(emp);
                 <tr key={index}>
                   <td>{emp.name}</td>
                   <td>{emp.age}</td>
-                  <td>{emp.sal}</td>
+                  <td>{emp.salary}</td>
                 <td style={{textAlign:"center"}}><button className='btn btn-success m-2' onClick={ ()=>                   
                     {
                         
@@ -99,7 +100,7 @@ const [searchEmp, setSearchEmp] = useState(emp);
                           })
                           .then((willDelete) => {
                             if (willDelete) {                         
-                                props.deleteData(emp.name)       
+                                props.deleteData(emp.id)       
                               swal("Employee " + name + " has been deleted!", {
                                 icon: "success",
                               });
@@ -113,7 +114,7 @@ const [searchEmp, setSearchEmp] = useState(emp);
                     >Delete</button>
                     <button type="button" className="btn btn-primary" 
                     onClick={
-                        ()=>{setData(emp.name,emp.age,emp.sal)
+                        ()=>{setData(emp.name,emp.age,emp.salary)
                         setFlag(flag);}
                     } data-bs-toggle="modal" data-bs-target="#exampleModal">View</button>
                     </td>
@@ -169,7 +170,7 @@ const [searchEmp, setSearchEmp] = useState(emp);
       <div className="modal-footer">
         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" className="btn btn-primary" data-bs-dismiss={flag?"modal":null} onClick={()=>{            
-            props.updateData(name,age,sal)
+            props.updateData(name,age,sal,id)
               swal({
                 title: "Success!",
                 text: "Data updated for employee " + name,

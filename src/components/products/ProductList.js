@@ -21,13 +21,7 @@ export default function ProductList() {
         >
           Home
         </NavLink>
-        <NavLink
-          to="-1"
-          class="btn btn-primary"
-          className={{ align: "center" }}
-        >
-          Top
-        </NavLink>
+      
       </div>
     </>
   );

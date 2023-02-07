@@ -30,23 +30,34 @@ import Navbar from "./components/navbar/Navbar";
 import Features from "./Routes/Features";
 import Pricing from "./Routes/Pricing";
 import Errorpage from "./Routes/Errorpage";
+import SideNavBar from "./components/navbar/SideNavBar";
+import AboutUs from "./Routes/AboutUs";
+import Client from "./Routes/Client";
+import Product from "./Routes/Product";
+import EmployeeMain from "./components/employee/EmployeeMain";
 
 
 function App() {
-  Myinterceptor1();
-  Myinterceptor2();
+ // Myinterceptor1();
+  //Myinterceptor2();
   return (
     <>
-      <Navbar/>
+    <Header></Header>   
+      <SideNavBar/>
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/home" element={<Home />} />
-        <Route exact path="/Features" element={<Features/>} />
+        <Route exact path="/AboutUs" element={<AboutUs/>} >
+        <Route index element={<Client/>}/>
+          <Route path='Client' element={<Client/>}/>
+          <Route path='Product' element={<Product/>}></Route>
+        </Route>
         <Route exact path="/ProductList" element={<ProductList/>} />
+        <Route exact path="/Employee" element={<EmpMain/>}/>
         <Route exact path="*" element={<Errorpage/>} />
       </Routes>
 
-      {/* <Header></Header>    */}
+      
       {/* <Carousel></Carousel>  */}
       {/* <ProductList></ProductList> */}
       {/* <Footer></Footer>  */}

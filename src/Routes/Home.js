@@ -4,7 +4,11 @@ import Carousel from '../components/carousel/Carousel'
 export default function Home() {
   return (
     <>
-    <Carousel/>   
+     <div className="container">
+      <div className="row">
+    This is Home Page
+    </div>
+    </div>
     </>
   )
 }
