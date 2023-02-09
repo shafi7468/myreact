@@ -170,7 +170,7 @@ const [searchEmp, setSearchEmp] = useState(emp);
       <div className="modal-footer">
         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" className="btn btn-primary" data-bs-dismiss={flag?"modal":null} onClick={()=>{            
-            props.updateData(name,age,sal,id)
+            props.updateData(name,age,sal)
               swal({
                 title: "Success!",
                 text: "Data updated for employee " + name,

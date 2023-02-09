@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import 'bootstrap/dist/js/bootstrap.js'
 import { BrowserRouter } from 'react-router-dom';
-
+<script src="https://cdn.skypack.dev/rc-pagination@3.1.15"></script>
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

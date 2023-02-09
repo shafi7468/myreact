@@ -1,7 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
 import swal from 'sweetalert'
-import Pagination  from "https://cdn.skypack.dev/rc-pagination@3.1.15";
+
+
 import './Emp.css'
 
 
@@ -122,7 +123,7 @@ export default function EmpView(props) {
         </tbody>
       </table>
       </div>
-      <div className='col-6 row m-5'>
+      {/* <div className='col-6 row m-5'>
                                 
                                 <Pagination
                                     className="pagination-data"
@@ -135,7 +136,7 @@ export default function EmpView(props) {
                                     itemRender={PrevNextArrow}
                                     onShowSizeChange={PerPageChange}
                                 />
-                            </div>
+                            </div> */}
       
 <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div className="modal-dialog">

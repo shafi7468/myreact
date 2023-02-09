@@ -42,7 +42,7 @@ export default function EmpMain() {
 
   };
 
-  const updateData =async (empName, ageNew, sal,id) => {
+  const updateData =async (empName, ageNew, sal) => {
       //const tempData = empData.map((p) =>
      // p.name === empName ? { ...p, age: ageNew, sal: sal } : p
     //);
